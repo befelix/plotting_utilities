@@ -29,8 +29,14 @@ def cm2inches(centimeters):
     return centimeters / 2.54
 
 
-def set_figure_params():
-    """Define default values for font, fontsize and use latex"""
+def set_figure_params(serif=True):
+    """Define default values for font, fontsize and use latex
+
+    Parameters
+    ----------
+    serif: bool, optional
+        Whether to use a serif or sans-serif font
+    """
 
     params = {
               'font.family': 'serif',
@@ -60,6 +66,9 @@ def set_figure_params():
               # 'savefig.dpi': 600,
               'legend.numpoints': 1,
               }
+
+    if not serif:
+        params['font.family'] = 'sans-serif'
 
     rcParams.update(params)
 
