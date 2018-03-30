@@ -102,7 +102,7 @@ def hide_spines(axis, top=True, right=True):
 
 def set_frame_properties(axis, color, lw):
     """Set color and linewidth of frame."""
-    for spine in axis.spines.itervalues():
+    for spine in axis.spines.values():
         spine.set_linewidth(lw)
         spine.set_color(color)
 
