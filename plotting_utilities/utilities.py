@@ -29,7 +29,7 @@ def cm2inches(centimeters):
     return centimeters / 2.54
 
 
-def set_figure_params(serif=True):
+def set_figure_params(serif=True, fontsize=9):
     """Define default values for font, fontsize and use latex
 
     Parameters
@@ -54,13 +54,13 @@ def set_figure_params(serif=True):
               'text.latex.preamble':
               r'\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}',
 
-              'axes.labelsize': 9,
+              'axes.labelsize': fontsize,
               'axes.linewidth': .75,
 
-              'font.size': 9,
-              'legend.fontsize': 9,
-              'xtick.labelsize': 8,
-              'ytick.labelsize': 8,
+              'font.size': fontsize,
+              'legend.fontsize': fontsize,
+              'xtick.labelsize': fontsize * 8 / 9,
+              'ytick.labelsize': fontsize * 8 / 9,
 
               # 'figure.dpi': 150,
               # 'savefig.dpi': 600,
