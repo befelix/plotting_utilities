@@ -39,16 +39,16 @@ def set_figure_params(serif=True, fontsize=9):
     """
 
     params = {
-              'font.family': 'serif',
               'font.serif': ['Times',
                              'Palatino',
                              'New Century Schoolbook',
                              'Bookman',
-                             'Computer Modern Roman'],
+                             'Computer Modern Roman'] +  rcParams['font.serif'],
               'font.sans-serif': ['Times',
                                   'Helvetica',
                                   'Avant Garde',
-                                  'Computer Modern Sans serif'],
+                                  'Computer Modern Sans serif'] + rcParams['font.sans-serif'],
+              'font.family': 'serif',
               'text.usetex': True,
               # Make sure mathcal doesn't use the Times style
               'text.latex.preamble':
@@ -82,12 +82,12 @@ def hide_all_ticks(axis):
     """
     axis.tick_params(axis='both',        # changes apply to the x-axis
                      which='both',       # affect both major and minor ticks
-                     bottom='off',       # ticks along the bottom edge are off
-                     top='off',          # ticks along the top edge are off
-                     left='off',         # No ticks left
-                     right='off',        # No ticks right
-                     labelbottom='off',  # No tick-label at bottom
-                     labelleft='off')    # No tick-label at bottom
+                     bottom=False,       # ticks along the bottom edge are off
+                     top=False,          # ticks along the top edge are off
+                     left=False,         # No ticks left
+                     right=False,        # No ticks right
+                     labelbottom=False,  # No tick-label at bottom
+                     labelleft=False)    # No tick-label at bottom
 
 
 def hide_spines(axis, top=True, right=True):
